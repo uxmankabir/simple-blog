@@ -1,0 +1,48 @@
+<h3 class="mb-3">All Previous Contacts</h3>
+
+<% @contacts.each do |contact| %>
+  <div class="card mb-3">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-12 col-md-3">
+          Name: 
+        </div>
+        <div class="col-sm-12 col-md-9">
+          <%= contact.name %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-3">
+          Phone No: 
+        </div>
+        <div class="col-sm-12 col-md-9">
+          <%= contact.phone %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-3">
+          Email: 
+        </div>
+        <div class="col-sm-12 col-md-9">
+          <%= contact.email %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-3">
+          Gender: 
+        </div>
+        <div class="col-sm-12 col-md-9">
+          <%= contact.gender.humanize %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-3">
+          Favorite Foods: 
+        </div>
+        <div class="col-sm-12 col-md-9">
+          <%= contact.favourite_foods.present? ? contact.favourite_foods : "None" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
