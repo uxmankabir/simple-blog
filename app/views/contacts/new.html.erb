@@ -1,86 +1,56 @@
-
-<div class="d-flex justify-content-between align-items-center">
-  <h3>Contact Us</h3>
-  <%= link_to 'Previous Contacts', contacts_path, class: 'btn btn-primary' %>
-</div>
-
-<%= form_for @contact do |f| %>
-  <p class="my-3"><em><strong>Kindly fill the form to contact us:</strong></em></p>
-  <div class="mb-3">
-    <%= f.label :name, class: "form-label" %>
-    <%= f.text_field :name, class: "form-control", required: true %>
-  </div>
-  <div class="mb-3">
-    <%= f.label :phone, "Phone No.", class: "form-label" %>
-    <%= f.text_field :phone, class: "form-control", required: true %>
-  </div>
-  <div class="mb-3">
-    <%= f.label :email, class: "form-label" %>
-    <%= f.text_field :email, class: "form-control", required: true %>
-  </div>
-
-  <label class="form-label">Gender</label>
-  <div class="mb-3 ms-5">
-    <div class="form-check">
-      <%= f.radio_button :gender, :male, class: 'form-check-input', required: true %>
-      <%= f.label :gender_male, "Male", class: "form-check-label" %>
-    </div>
-    <div class="form-check">
-      <%= f.radio_button :gender, :female, class: 'form-check-input' %>
-      <%= f.label :gender_female, "Female", class: "form-check-label" %>
-    </div>
-    <div class="form-check">
-      <%= f.radio_button :gender, :both, class: 'form-check-input' %>
-      <%= f.label :gender_both, "Both", class: "form-check-label" %>
-    </div>
-    <div class="form-check">
-      <%= f.radio_button :gender, :neither, class: 'form-check-input' %>
-      <%= f.label :gender_neither, "Neither", class: "form-check-label" %>
-    </div>
-    <div class="form-check">
-      <%= f.radio_button :gender, :apachi_helicopter, class: 'form-check-input' %>
-      <%= f.label :gender_apachi_helicopter, "Apachi Helicopter", class: "form-check-label" %>
-    </div>
-    <div class="form-check">
-      <%= f.radio_button :gender, :rather_not_say, class: 'form-check-input' %>
-      <%= f.label :gender_rather_not_say, "Rather Not Say", class: "form-check-label" %>
-    </div>
-  </div>
-
-  <label class="form-label">Favorite Foods</label>
-  <div class="mb-3 ms-5">
-    <div class="form-check">
-      <%= check_box_tag :poison, "Poison", false, class: 'form-check-input' %>
-      <%= label_tag :poison, "Poison", class: "form-check-label" %>
-    </div>
-    <div class="form-check">
-      <%= check_box_tag :elixir_of_life, "Elixir of Life", false, class: 'form-check-input' %>
-      <%= label_tag :elixir_of_life, "Elixir of Life", class: "form-check-label" %>
-    </div>
-    <div class="form-check">
-      <%= check_box_tag :snails, "Snails", false, class: 'form-check-input' %>
-      <%= label_tag :snails, "Snails", class: "form-check-label" %>
-    </div>
-    <div class="form-check">
-      <%= check_box_tag :cockroaches, "Cockroaches", false, class: 'form-check-input' %>
-      <%= label_tag :cockroaches, "Cockroaches", class: "form-check-label" %>
-    </div>
-    <div class="form-check">
-      <%= check_box_tag :roasted_cat, "Roasted Cat", false, class: 'form-check-input' %>
-      <%= label_tag :roasted_cat, "Roasted Cat", class: "form-check-label" %>
-    </div>
-    <div class="form-check">
-      <%= check_box_tag :rare_cooked_spicy_bat, "Rare-Cooked Spicy Bat", false, class: 'form-check-input' %>
-      <%= label_tag :rare_cooked_spicy_bat, "Rare-Cooked Spicy Bat", class: "form-check-label" %>
-    </div>
-    <div class="form-check">
-      <%= check_box_tag :dog_soup, "Dog Soup", false, class: 'form-check-input' %>
-      <%= label_tag :dog_soup, "Dog Soup", class: "form-check-label" %>
-    </div>
-  </div>
-
-  <div class="text-center">
-    <%= f.submit "Send My Data", class: "btn btn-primary" %>
-  </div>
-<% end %>
-
+<p align="left">
+	<u><i>Kindly fill this form to contact us:</i></u> <br>
+  <%= link_to 'Previous Contacts', contacts_path, class: '' %>
+</p><br><br>
+<table width="70%" border="2" align="center">
+  <%= form_for @contact do |f| %>
+  <tr>
+  	<td width="50" align="left">Name</td>
+    <td width="50" align="left">
+      <%= f.text_field :name, class: "", required: true %>
+    </td>
+  </tr>
+  <tr>
+		<td width="50" align="left">Phone No</td>
+  	<td width="50" align="left">
+      <%= f.text_field :phone, class: "", required: true %>
+	  </td>
+	</tr>
+  <tr>
+		<td width="50" align="left">Email</td>
+	  <td width="50" align="left">
+      <%= f.text_field :email, class: "", required: true %>
+	  </td>
+	</tr>
+  <tr>
+    <td width="50" align="left">Gender</td>
+	  <td width="50" align="left">
+      <%= f.radio_button :gender, :male, class: '', required: true %> Male <br>
+      <%= f.radio_button :gender, :female, class: '' %> Female <br>
+      <%= f.radio_button :gender, :both, class: '' %> Both <br>
+      <%= f.radio_button :gender, :neither, class: '' %> Neither <br>
+      <%= f.radio_button :gender, :apachi_helicopter, class: '' %> Apachi Helicopter <br>
+      <%= f.radio_button :gender, :rather_not_say, class: '' %> Rather Not Say
+    </td>
+  </tr>
+  <tr>
+    <td width="50" align="left">Favorite Foods</td>
+	  <td width="50" align="left">
+      <%= check_box_tag :poison, "Poison", false, class: '' %> Poison <br>
+      <%= check_box_tag :elixir_of_life, "Elixir of Life", false, class: '' %> Elixir of Life <br>
+      <%= check_box_tag :snails, "Snails", false, class: '' %> Snails <br>
+      <%= check_box_tag :cockroaches, "Cockroaches", false, class: '' %> Cockroaches <br>
+      <%= check_box_tag :roasted_cat, "Roasted Cat", false, class: '' %> Roasted Cat <br>
+      <%= check_box_tag :rare_cooked_spicy_bat, "Rare-Cooked Spicy Bat", false, class: '' %> Rare-Cooked Spicy Bat <br>
+      <%= check_box_tag :dog_soup, "Dog Soup", false, class: '' %> Dog Soup <br>
+    </td>
+  </tr>
+    
+  <tr>
+    <td width="50" align="left"></td>
+	  <td width="50" align="left">
+      <%= f.submit "Send My Data", class: "" %>
+    </td>
+  </tr>
+  <% end %>
+</table>

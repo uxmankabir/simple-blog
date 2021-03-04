@@ -1,48 +1,36 @@
-<h3 class="mb-3">All Previous Contacts</h3>
 
 <% @contacts.each do |contact| %>
-  <div class="card mb-3">
-    <div class="card-body">
-      <div class="row">
-        <div class="col-sm-12 col-md-3">
-          Name: 
-        </div>
-        <div class="col-sm-12 col-md-9">
-          <%= contact.name %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-12 col-md-3">
-          Phone No: 
-        </div>
-        <div class="col-sm-12 col-md-9">
-          <%= contact.phone %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-12 col-md-3">
-          Email: 
-        </div>
-        <div class="col-sm-12 col-md-9">
-          <%= contact.email %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-12 col-md-3">
-          Gender: 
-        </div>
-        <div class="col-sm-12 col-md-9">
-          <%= contact.gender.humanize %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-12 col-md-3">
-          Favorite Foods: 
-        </div>
-        <div class="col-sm-12 col-md-9">
-          <%= contact.favourite_foods.present? ? contact.favourite_foods : "None" %>
-        </div>
-      </div>
-    </div>
-  </div>
+<table width="70%" border="2" align="center">
+  <tr>
+  	<td width="50" align="left">Name:</td>
+    <td width="50" align="left">
+      <%= contact.name %>
+    </td>
+  </tr>
+  <tr>
+  	<td width="50" align="left">Phone No:</td>
+    <td width="50" align="left">
+      <%= contact.phone %>
+    </td>
+  </tr>
+  <tr>
+  	<td width="50" align="left">Email</td>
+    <td width="50" align="left">
+      <%= contact.email %>
+    </td>
+  </tr>
+  <tr>
+  	<td width="50" align="left">Gender:</td>
+    <td width="50" align="left">
+      <%= contact.gender.humanize %>
+    </td>
+  </tr>
+  <tr>
+  	<td width="50" align="left">Favorite Foods:</td>
+    <td width="50" align="left">
+      <%= contact.favourite_foods.present? ? contact.favourite_foods : "None" %>
+    </td>
+  </tr>
+</table>
+  <br><br><br>
 <% end %>
